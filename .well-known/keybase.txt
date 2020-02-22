@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/vthiery
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://vthiery.github.io
+  * I am vthiery (https://keybase.io/vthiery) on keybase.
+  * I have a public key ASBNUG7vtpletuY0lVOEX2VGHBRU-cAXghqe5Nnc3ABj5Ao
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204d506eefb6995eb6e6349553845f65461c1454f9c017821a9ee4d9dcdc0063e40a",
+      "host": "keybase.io",
+      "kid": "01204d506eefb6995eb6e6349553845f65461c1454f9c017821a9ee4d9dcdc0063e40a",
+      "uid": "934d72924cb57065d65db76384d8a919",
+      "username": "vthiery"
+    },
+    "merkle_root": {
+      "ctime": 1582394341,
+      "hash": "1aadce893f9daad6a16a9ee7e0eb5bc8d1216db567f015822aa6d13c8b86cba534e2422358181ab21c6a4bdf5204f0d4c47c8fc99011c442133c8a364b376026",
+      "hash_meta": "558e9b133b7769fbdba2c3a07d1148e967209f8a1ea824af861f76b470892984",
+      "seqno": 14700243
+    },
+    "service": {
+      "entropy": "93LD3sKWwKGCOLWtFMvC3+XF",
+      "hostname": "vthiery.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.2.0"
+  },
+  "ctime": 1582394353,
+  "expire_in": 504576000,
+  "prev": "ddc1553596d1d0b2529ef7451801236f3bee2f534f1dc8f68f356587625d2ee6",
+  "seqno": 18,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgTVBu77aZXrbmNJVThF9lRhwUVPnAF4IanuTZ3NwAY+QKp3BheWxvYWTESpcCEsQg3cFVNZbR0LJSnvdFGAEjbzvuL1NPHcj2jzVlh2JdLubEIJxXtyA3iQAGpLNdDgTSSsUbK9PrtHYDTjGU6CoKuIzVAgHCo3NpZ8RAKvfQfAyCV5q4iFqfsVS72WGuuguaPcz6bYjRKFpz7kxO1M7pOEHAuXeRVU6zbiq/jmND/OlSWZkHKW+XocO4B6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIDdhgMO49y9dqMjAT/wGXr0N8jVBPDIxbLUe/+CCSH5ko3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/vthiery
+
+==================================================================
