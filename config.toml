@@ -1,0 +1,30 @@
+title        = "Vincent Thiery"
+baseURL      = "https://vthiery.github.io"
+languageCode = "en-us"
+theme        = "hello-friend-ng"
+
+[params]
+    author       = "Vincent Thiery"
+    homeSubtitle = "CISO & SRE @ Edgelab / Evooq"
+    description  = "Vincent Thiery's personal page"
+
+[params.logo]
+    logoMark = ">"
+    logoText = "/home/vthiery"
+
+[[params.social]]
+    name = "github"
+    url = "https://github.com/vthiery"
+[[params.social]]
+    name = "gitlab"
+    url = "https://gitlab.com/vthiery"
+[[params.social]]
+    name = "keybase"
+    url = "https://keybase.io/vthiery"
+[[params.social]]
+    name = "email"
+    url  = "mailto:vjmthiery@gmail.com"
+
+[[menu.main]]
+    name = "CV"
+    url = "/cv/"
