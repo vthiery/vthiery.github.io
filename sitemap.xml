@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://vthiery.github.io/about/</loc>
+    <lastmod>2020-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vthiery.github.io/categories/</loc>
+  </url><url>
+    <loc>https://vthiery.github.io/tags/</loc>
+  </url><url>
+    <loc>https://vthiery.github.io/cv/</loc>
+  </url><url>
+    <loc>https://vthiery.github.io/</loc>
+  </url>
+</urlset>
