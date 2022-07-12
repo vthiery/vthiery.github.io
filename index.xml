@@ -21,8 +21,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vthiery.github.io/cv/</guid>
-      <description>tl;dr I studied Maths and Theoretical Physics, became a Quant, got hooked on Software Engineering, and then transitioned to an SRE role.
-Experiences Site Reliability Engineer @ Edgelab Since Jan 2020
+      <description>Experiences Chief Information Security Officer (CISO) @ Edgelab Since Sep 2021
+Responsible for developing and implementing Edgelab&amp;rsquo;s information security program.
+Site Reliability Engineer (SRE) @ Edgelab Since Jan 2020
 Building a scalable, secure, and flexible infrastructure using the Hashicorp stack (Terraform, Packer, Consul, Nomad, and Vault) on AWS.
 Our SRE team also helps developers to confidently deploy their microservices in production by:
  providing a CI/CD platform using Jenkins and Github Actions offering a complete monitoring suite, leveraging Prometheus, the ELK stack, Jaeger, and Opsgenie  We also help developers to troubleshoot bugs and performance issues in their microservices (mostly Go and Python).</description>
