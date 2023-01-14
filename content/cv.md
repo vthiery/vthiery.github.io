@@ -5,15 +5,13 @@ title: Vincent Thiery
 
 ## TL;DR
 
-- I am currently working as CISO and SRE for [Edgelab](https://www.edgelab.ch) / [Evooq](https://www.evooq.ch) in Switzerland.
+- I am currently working as CISO for [Edgelab](https://www.edgelab.ch) / [Evooq](https://www.evooq.ch) in Switzerland.
 - I'm curious, enjoy learning new things, and particularly interested in cybersecurity.
 - I speak French, English, and a bit of Spanish.
 
 ## Experiences
 
 ### Chief Information Security Officer (CISO) @ [Edgelab](https://www.edgelab.ch/) / [Evooq](https://www.evooq.ch)
-
----
 
 _Since Sep 2021_
 
@@ -28,9 +26,9 @@ My mission is to:
 - ensure compliance with applicable regulations (Switzerland, EU, Singapore)
 - lead the Security Team
 
-### Site Reliability Engineer (SRE) @ [Edgelab](https://www.edgelab.ch/)
-
 ---
+
+### Site Reliability Engineer (SRE) @ [Edgelab](https://www.edgelab.ch/)
 
 _Jan 2020 &rarr; Dec 2022_
 
@@ -43,9 +41,9 @@ Our SRE team also helps developers to confidently deploy their microservices in 
 - administrating [MySQL](https://www.mysql.com/) and [PostgreSQL](https://www.postgresql.org/) databases
 - helping to troubleshoot bugs and performance issues in their microservices (mostly [Go](https://go.dev/) and [Python](https://www.python.org/))
 
-### Lead Software Engineer @ [Edgelab](https://www.edgelab.ch/)
-
 ---
+
+### Lead Software Engineer @ [Edgelab](https://www.edgelab.ch/)
 
 _Aug 2016 &rarr; Jan 2020_
 
@@ -60,9 +58,9 @@ Biggest achievements:
 
 Most used techs: [Go](https://go.dev/), [C++17](https://en.wikipedia.org/wiki/C%2B%2B17), [gRPC](https://grpc.io/), [Docker](https://www.docker.com/), [RabbitMQ](https://www.rabbitmq.com/), [MySQL](https://www.mysql.com/), [Cassandra](https://cassandra.apache.org/_/index.html)
 
-### FX Quant @ [UBS](https://www.ubs.com/ch/en.html)
-
 ---
+
+### FX Quant @ [UBS](https://www.ubs.com/ch/en.html)
 
 _May 2014 &rarr; Jul 2016_
 

@@ -5,7 +5,7 @@ theme        = "hello-friend-ng"
 
 [params]
     author       = "Vincent Thiery"
-    homeSubtitle = "CISO & SRE @ Edgelab / Evooq"
+    homeSubtitle = "CISO @ Edgelab / Evooq"
     description  = "Vincent Thiery's personal page"
 
 [params.logo]
