@@ -19,6 +19,9 @@ theme        = "hello-friend-ng"
     name = "gitlab"
     url = "https://gitlab.com/vthiery"
 [[params.social]]
+    name = "hackthebox"
+    url = "https://app.hackthebox.com/profile/1114041"
+[[params.social]]
     name = "keybase"
     url = "https://keybase.io/vthiery"
 [[params.social]]
