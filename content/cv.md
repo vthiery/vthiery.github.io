@@ -7,11 +7,11 @@ title: Vincent Thiery
 
 - I am currently working as CISO for [Edgelab](https://www.edgelab.ch) / [Evooq](https://www.evooq.ch) in Switzerland.
 - I'm curious, enjoy learning new things, and particularly interested in cybersecurity.
-- I speak French, English, and a bit of Spanish.
+- I speak French and English. Feel free to contact me by [email](mailto:vjmthiery@gmail.com).
 
 ## Experiences
 
-### Chief Information Security Officer (CISO) @ [Edgelab](https://www.edgelab.ch/) / [Evooq](https://www.evooq.ch)
+### --- Chief Information Security Officer (CISO) @ [Edgelab](https://www.edgelab.ch/) / [Evooq](https://www.evooq.ch)
 
 _Since Sep 2021_
 
@@ -26,9 +26,7 @@ My mission is to:
 - ensure compliance with applicable regulations (Switzerland, EU, Singapore)
 - lead the Security Team
 
----
-
-### Site Reliability Engineer (SRE) @ [Edgelab](https://www.edgelab.ch/)
+### --- Site Reliability Engineer (SRE) @ [Edgelab](https://www.edgelab.ch/)
 
 _Jan 2020 &rarr; Dec 2022_
 
@@ -41,9 +39,7 @@ Our SRE team also helps developers to confidently deploy their microservices in 
 - administrating [MySQL](https://www.mysql.com/) and [PostgreSQL](https://www.postgresql.org/) databases
 - helping to troubleshoot bugs and performance issues in their microservices (mostly [Go](https://go.dev/) and [Python](https://www.python.org/))
 
----
-
-### Lead Software Engineer @ [Edgelab](https://www.edgelab.ch/)
+### --- Lead Software Engineer @ [Edgelab](https://www.edgelab.ch/)
 
 _Aug 2016 &rarr; Jan 2020_
 
@@ -58,13 +54,11 @@ Biggest achievements:
 
 Most used techs: [Go](https://go.dev/), [C++17](https://en.wikipedia.org/wiki/C%2B%2B17), [gRPC](https://grpc.io/), [Docker](https://www.docker.com/), [RabbitMQ](https://www.rabbitmq.com/), [MySQL](https://www.mysql.com/), [Cassandra](https://cassandra.apache.org/_/index.html)
 
----
-
-### FX Quant @ [UBS](https://www.ubs.com/ch/en.html)
+### --- FX Quant @ [UBS](https://www.ubs.com/ch/en.html)
 
 _May 2014 &rarr; Jul 2016_
 
-From intern to Associate Director within the FX Quant team (front-office) responsible for the development of the UBS in-house C++ library for FX derivatives pricing and valuation.
+Operated within the front-office FX Quant team, responsible for the development of the UBS in-house C++ library for FX derivatives pricing and valuation.
 
 Main contributions and responsibilities:
 
@@ -75,11 +69,19 @@ Main contributions and responsibilities:
 
 Most used techs: [C++11](https://en.wikipedia.org/wiki/C%2B%2B11), [Python](https://www.python.org/), [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
-Positions:
+## Professional development
 
-- _Mar 2016 &rarr; Jul 2016_: Associate Director
-- _Jan 2015 &rarr; Feb 2016_: Graduate Training Program
-- _May 2014 &rarr; Dec 2014_: Internship on ["Greeks with continuous adjoints"](https://www.risk.net/derivatives/2415103/greeks-with-continuous-adjoints-fast-to-code-fast-to-run)
+I try to learn new stuff everyday. Here is a list of recent courses I took and recommend:
+
+- TCM Security - [Practical Malware Analysis & Triage](https://academy.tcm-sec.com/p/practical-malware-analysis-triage) - February 2023
+- HTB Academy - [Bug Bounty Hunter role path](https://academy.hackthebox.com/path/preview/bug-bounty-hunter) - January 2023
+
+## Education
+
+- Master in Mathematics applied to Finance - [Université Paris Dauphine](https://dauphine.psl.eu/) / [ENSAE](https://www.ensae.fr/) --- 2013 &rarr; 2014
+- Master in Theoretical and Mathematical Physics - _[Ecole Normale Supérieure - Paris](https://www.ens.psl.eu/)_ --- 2012 &rarr; 2013
+- Magistere in Fundamental Physics - _[Université Paris-Sud](https://www.universite-paris-saclay.fr/)_ --- 2010 &rarr; 2013
+- Classes Préparatoires aux Grandes Ecoles - _[Lycée Fabert, Metz](https://www.prepas-fabert.com/cpge/)_ --- 2008 &rarr; 2010
 
 ## Research
 
@@ -93,29 +95,3 @@ Positions:
 - ["Asymmetric Gepner models in type II"](https://link.springer.com/article/10.1007/JHEP02(2014)011) @ [LPTHE](https://www.lpthe.jussieu.fr/spip/?lang=en), under supervision of Dr Dan Israel (_Jan 2013 &rarr; Mar 2013_)
 - "The phase diagram of non-abelian gauge theories" @ [Center for Theoretical Physics](https://www.rug.nl/research/theoretical-high-energy-physics/), in the group of Pr Dr Elisabetta Pallante (_Apr 2012 &rarr; Jul 2012_)
 - "Neutral meson mixing and CP violation" @ [Laboratory of Theoretical Physics](http://www.th.u-psud.fr/), under supervision of Dr Sébastien Descotes-Genon (_Jun 2011 &rarr; Jul 2011_)
-
-## Education
-
-### Master in Mathematics applied to Finance
-
-[Université Paris Dauphine](https://dauphine.psl.eu/) / [ENSAE](https://www.ensae.fr/) --- Sep 2013 &rarr; Mar 2014
-
-Studied Applied Mathematics, Quantitative Finance, and Risk Management in the [MASEF program](https://dauphine.psl.eu/en/training/masters-degrees/mathematics-and-applied-mathematics/m2-masef).
-
-### Master in Theoretical and Mathematical Physics
-
-_[Ecole Normale Supérieure - Paris](https://www.ens.psl.eu/)_ --- Sep 2012 &rarr; Jun 2013
-
-Studied Quantum Field Theory, General Relativity, Mathematical Physics, and Advanced Statistical Physics.
-
-### Magistere in Fundamental Physics
-
-_[Université Paris-Sud](https://www.universite-paris-saclay.fr/)_ --- Sep 2010 &rarr; Jun 2013
-
-Studied advanced Fundamental Physics in the [Magistere program](http://www.magistere-physique.universite-paris-saclay.fr/).
-
-### Classes Préparatoires aux Grandes Ecoles
-
-_[Lycée Fabert, Metz](https://www.prepas-fabert.com/cpge/)_ --- Sep 2008 &rarr; Jun 2010
-
-Studied Mathematics, Physics, Chemistry, and Engineering Sciences day and night for two years.
