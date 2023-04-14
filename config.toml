@@ -3,10 +3,12 @@ baseURL      = "https://vthiery.github.io"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
 
+enableEmoji = true
+
 [params]
     author       = "Vincent Thiery"
     homeSubtitle = "CISO @ Edgelab / Evooq"
-    description  = "Vincent Thiery's personal page"
+    description  = "Vincent Thiery's personal site"
 
 [params.logo]
     logoMark = ">"
@@ -29,5 +31,10 @@ theme        = "hello-friend-ng"
     url  = "mailto:vjmthiery@gmail.com"
 
 [[menu.main]]
+    weight = 1
+    name = "Notes"
+    url = "/notes/"
+[[menu.main]]
+    weight = 2
     name = "CV"
     url = "/cv/"
