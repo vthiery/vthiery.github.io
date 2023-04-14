@@ -69,13 +69,6 @@ Main contributions and responsibilities:
 
 Most used techs: [C++11](https://en.wikipedia.org/wiki/C%2B%2B11), [Python](https://www.python.org/), [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
-## Professional development
-
-I try to learn new stuff everyday. Here is a list of recent courses I took and recommend:
-
-- TCM Security - [Practical Malware Analysis & Triage](https://academy.tcm-sec.com/p/practical-malware-analysis-triage) - February 2023
-- HTB Academy - [Bug Bounty Hunter role path](https://academy.hackthebox.com/path/preview/bug-bounty-hunter) - January 2023
-
 ## Education
 
 - Master in Mathematics applied to Finance - [Université Paris Dauphine](https://dauphine.psl.eu/) / [ENSAE](https://www.ensae.fr/) --- 2013 &rarr; 2014
