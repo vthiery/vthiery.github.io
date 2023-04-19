@@ -6,7 +6,9 @@ title: Vincent Thiery
 ## TL;DR
 
 - I am currently working as CISO for [Edgelab](https://www.edgelab.ch) / [Evooq](https://www.evooq.ch) in Switzerland.
-- I'm curious, enjoy learning new things, and particularly interested in cybersecurity.
+- Also worked as SRE (2y), Software Engineer (3y+), and Quant (2y+).
+- Before that, I studied maths, physics, and quantitative finance.
+- I'm curious, enjoy learning new things, and passionate about cybersecurity.
 - I speak French and English. Feel free to contact me by [email](mailto:vjmthiery@gmail.com).
 
 ## Experiences
@@ -22,9 +24,7 @@ My mission is to:
 - implement controls to strengthen our cloud security posture
 - setup and operate our security monitoring tools, including our SIEM/SOAR
 - develop and lead our incident response program
-- communicate on information security throughout the organization
 - ensure compliance with applicable regulations (Switzerland, EU, Singapore)
-- lead the Security Team
 
 ### --- Site Reliability Engineer (SRE) @ [Edgelab](https://www.edgelab.ch/)
 
