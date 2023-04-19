@@ -6,15 +6,15 @@
     <description>Recent content on Vincent Thiery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cybersecurity Learning Resources</title>
       <link>https://vthiery.github.io/notes/learning-resources/</link>
-      <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://vthiery.github.io/notes/learning-resources/</guid>
       <description>A list of resources I use to teach myself cybersecurity and recommend.
-Courses Currently working on  Sektor7 - RED TEAM Operator: Malware Development Essentials Zero2Automated - Advanced Malware Analysis  Completed  TCM Security - OSINT Fundamentals - March 2023 TCM Security - Practical Windows Forensics - March 2023 TCM Security - Practical Malware Analysis &amp;amp; Triage - February 2023 HTB Academy - Bug Bounty Hunter role path - January 2023  Platforms  HTB Academy Hack The Box PortSwigger Academy  Books  Practical Malware Analysis by Michael Sikorski and Andrew Honig How to Investigate Like a Rockstar by Sparc Flow The Art of Cyberwarfare by Jon DiMaggio  </description>
+Courses Currently working on  Sektor7 - RED TEAM Operator: Malware Development Intermediate Intelligence-Driven Incident Response by Rebekah Brown, Scott J. Roberts Zero2Automated - Advanced Malware Analysis  Completed  Sektor7 - RED TEAM Operator: Malware Development Essentials - April 2023 TCM Security - OSINT Fundamentals - March 2023 TCM Security - Practical Windows Forensics - March 2023 TCM Security - Practical Malware Analysis &amp;amp; Triage - February 2023 HTB Academy - Bug Bounty Hunter role path - January 2023  Platforms  HTB Academy Hack The Box PortSwigger Academy  Books  Practical Malware Analysis by Michael Sikorski and Andrew Honig How to Investigate Like a Rockstar by Sparc Flow The Art of Cyberwarfare by Jon DiMaggio  </description>
     </item>
     
     <item>
@@ -35,9 +35,7 @@ Be very careful during the setup of your forensic lab, especially if you intend 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vthiery.github.io/cv/</guid>
-      <description>TL;DR  I am currently working as CISO for Edgelab / Evooq in Switzerland. I&amp;rsquo;m curious, enjoy learning new things, and particularly interested in cybersecurity. I speak French and English. Feel free to contact me by email.  Experiences &amp;mdash; Chief Information Security Officer (CISO) @ Edgelab / Evooq Since Sep 2021
-Responsible for the development and implementation of Edgelab&amp;rsquo;s information security program. My mission is to:
- design security management policies and processes aligned with infosec best practices implement controls to strengthen our cloud security posture setup and operate our security monitoring tools, including our SIEM/SOAR develop and lead our incident response program communicate on information security throughout the organization ensure compliance with applicable regulations (Switzerland, EU, Singapore) lead the Security Team  &amp;mdash; Site Reliability Engineer (SRE) @ Edgelab Jan 2020 → Dec 2022</description>
+      <description>TL;DR  I am currently working as CISO for Edgelab / Evooq in Switzerland. Also worked as SRE (2y), Software Engineer (3y+), and Quant (2y+). Before that, I studied maths, physics, and quantitative finance. I&amp;rsquo;m curious, enjoy learning new things, and passionate about cybersecurity. I speak French and English. Feel free to contact me by email.  Experiences &amp;mdash; Chief Information Security Officer (CISO) @ Edgelab / Evooq Since Sep 2021</description>
     </item>
     
   </channel>
