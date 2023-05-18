@@ -1,7 +1,7 @@
 ---
 layout: note
 title: Cybersecurity Learning Resources
-date: 2023-04-15
+date: 2023-05-18
 ---
 
 A list of resources I use to teach myself cybersecurity and recommend.
@@ -10,12 +10,12 @@ A list of resources I use to teach myself cybersecurity and recommend.
 
 ### Currently working on
 
-- Sektor7 - [RED TEAM Operator: Malware Development Intermediate](https://institute.sektor7.net/rto-maldev-intermediate)
-- [Intelligence-Driven Incident Response](https://www.oreilly.com/library/view/intelligence-driven-incident-response/9781098120672/) by Rebekah Brown, Scott J. Roberts
 - Zero2Automated - [Advanced Malware Analysis](https://www.0ffset.net/training/zero2auto/)
 
 ### Completed
 
+- Sektor7 - [RED TEAM Operator: Malware Development Intermediate](https://institute.sektor7.net/rto-maldev-intermediate) - May 2023
+- TCM Security - [Python 201 for Hackers](https://academy.tcm-sec.com/p/python-201-for-hackers) - May 2023
 - Sektor7 - [RED TEAM Operator: Malware Development Essentials](https://institute.sektor7.net/red-team-operator-malware-development-essentials) - April 2023
 - TCM Security - [OSINT Fundamentals](https://academy.tcm-sec.com/p/osint-fundamentals) - March 2023
 - TCM Security - [Practical Windows Forensics](https://academy.tcm-sec.com/p/practical-windows-forensics) - March 2023
@@ -30,6 +30,7 @@ A list of resources I use to teach myself cybersecurity and recommend.
 
 ## Books
 
+- [Intelligence-Driven Incident Response](https://www.oreilly.com/library/view/intelligence-driven-incident-response/9781098120672/) by Rebekah Brown, Scott J. Roberts
 - [Practical Malware Analysis](https://nostarch.com/malware) by Michael Sikorski and Andrew Honig
 - [How to Investigate Like a Rockstar](https://www.amazon.fr/How-Investigate-Like-Rockstar-forensic/dp/1549527622) by Sparc Flow
 - [The Art of Cyberwarfare](https://nostarch.com/art-cyberwarfare) by Jon DiMaggio
