@@ -6,15 +6,15 @@
     <description>Recent content in Notes on Vincent Thiery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cybersecurity Learning Resources</title>
       <link>https://vthiery.github.io/notes/learning-resources/</link>
-      <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://vthiery.github.io/notes/learning-resources/</guid>
       <description>A list of resources I use to teach myself cybersecurity and recommend.
-Courses Currently working on  Zero2Automated - Advanced Malware Analysis  Completed  Sektor7 - RED TEAM Operator: Malware Development Intermediate - May 2023 TCM Security - Python 201 for Hackers - May 2023 Sektor7 - RED TEAM Operator: Malware Development Essentials - April 2023 TCM Security - OSINT Fundamentals - March 2023 TCM Security - Practical Windows Forensics - March 2023 TCM Security - Practical Malware Analysis &amp;amp; Triage - February 2023 HTB Academy - Bug Bounty Hunter role path - January 2023  Platforms  HTB Academy Hack The Box PortSwigger Academy  Books  Intelligence-Driven Incident Response by Rebekah Brown, Scott J.</description>
+Courses  Zero2Automated - Advanced Malware Analysis - In progress Udemy - Chris Greer&amp;rsquo;s Wireshark Hands-On Course - May 2023 Sektor7 - RED TEAM Operator: Malware Development Intermediate - May 2023 TCM Security - Python 201 for Hackers - May 2023 Sektor7 - RED TEAM Operator: Malware Development Essentials - April 2023 TCM Security - OSINT Fundamentals - March 2023 TCM Security - Practical Windows Forensics - March 2023 TCM Security - Practical Malware Analysis &amp;amp; Triage - February 2023 HTB Academy - Bug Bounty Hunter role path - January 2023  CTFs and Labs  CyberSoc CyberDefenders Hack The Box HTB Academy PortSwigger Academy  Books  Practical Threat Intelligence and Data-Driven Threat Hunting by Valentina Costa-Gazcón Huntpedia Intelligence-Driven Incident Response by Rebekah Brown, Scott J.</description>
     </item>
     
     <item>
