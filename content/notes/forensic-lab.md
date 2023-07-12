@@ -2,6 +2,10 @@
 layout: note
 title: Forensic Lab setup 
 date: 2023-03-27
+tags:
+  - forensics
+  - malware
+  - lab
 ---
 
 This tutorial will guide you through the setup of a Forensic lab using:
