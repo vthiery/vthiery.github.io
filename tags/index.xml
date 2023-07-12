@@ -5,6 +5,52 @@
     <link>https://vthiery.github.io/tags/</link>
     <description>Recent content in Tags on Vincent Thiery</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://vthiery.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>assembly</title>
+      <link>https://vthiery.github.io/tags/assembly/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cutter</title>
+      <link>https://vthiery.github.io/tags/cutter/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/cutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reverse-engineering</title>
+      <link>https://vthiery.github.io/tags/reverse-engineering/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/reverse-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>write-up</title>
+      <link>https://vthiery.github.io/tags/write-up/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/write-up/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>x86-64</title>
+      <link>https://vthiery.github.io/tags/x86-64/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/x86-64/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

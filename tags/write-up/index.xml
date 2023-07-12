@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>write-up on Vincent Thiery</title>
+    <link>https://vthiery.github.io/tags/write-up/</link>
+    <description>Recent content in write-up on Vincent Thiery</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/tags/write-up/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse Engineering the &#34;Bomb Lab&#34; with Cutter</title>
+      <link>https://vthiery.github.io/posts/re-bomb-lab/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/posts/re-bomb-lab/</guid>
+      <description>Context I recently took the excellent &amp;ldquo;Architecture 1001: x86-64 Assembly&amp;rdquo; course offered by Xeno Kovah on OpenSecurityTraining2 to consolidate my knowledge of x86-64 assembly. The final assignment consists in solving the &amp;ldquo;Bomb Lab&amp;rdquo;.
+Although the course suggests to use gdb or WinDbg, I decided to do it differently and use Cutter with the following constraints:
+ Not using debug symbols - this is something Xeno actually recommends if one has some reverse-engineering experience, or want extra challenge Perform a pure static analysis - using gdb/gef would be much smarter here, but I really wanted to practice static analysis Not using rz-ghidra or any decompiler since that would defeat the whole point of the exercise  I used Cutter Version 2.</description>
+    </item>
+    
+  </channel>
+</rss>
