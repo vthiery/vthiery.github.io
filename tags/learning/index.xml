@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Notes on Vincent Thiery</title>
-    <link>https://vthiery.github.io/notes/</link>
-    <description>Recent content in Notes on Vincent Thiery</description>
+    <title>learning on Vincent Thiery</title>
+    <link>https://vthiery.github.io/tags/learning/</link>
+    <description>Recent content in learning on Vincent Thiery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cybersecurity Learning Resources</title>
       <link>https://vthiery.github.io/notes/learning-resources/</link>
@@ -15,18 +15,6 @@
       <guid>https://vthiery.github.io/notes/learning-resources/</guid>
       <description>A list of resources that I use to teach myself cybersecurity and recommend.
 Malware Analysis / Reverse Engineering Online courses  Zero2Automated - Advanced Malware Analysis - In progress OpenSecurityTraining2 - Architecture 1001: x86-64 Assembly - July 2023 Sektor7 - RED TEAM Operator: Malware Development Intermediate - May 2023 Sektor7 - RED TEAM Operator: Malware Development Essentials - April 2023 TCM Security - Practical Malware Analysis &amp;amp; Triage - February 2023  Books  Practical Malware Analysis by Michael Sikorski and Andrew Honig  General Online courses  Udemy - Chris Greer&amp;rsquo;s Wireshark Hands-On Course - May 2023 TCM Security - Python 201 for Hackers - May 2023 TCM Security - OSINT Fundamentals - March 2023 TCM Security - Practical Windows Forensics - March 2023 HTB Academy - Bug Bounty Hunter role path - January 2023  Books  Practical Threat Intelligence and Data-Driven Threat Hunting by Valentina Costa-Gazcón Huntpedia Intelligence-Driven Incident Response by Rebekah Brown, Scott J.</description>
-    </item>
-    
-    <item>
-      <title>Forensic Lab setup</title>
-      <link>https://vthiery.github.io/notes/forensic-lab/</link>
-      <pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://vthiery.github.io/notes/forensic-lab/</guid>
-      <description>This tutorial will guide you through the setup of a Forensic lab using:
- VirtualBox 7 REMnux + Sift on Ubuntu 20.04 FlareVM on Windows 10  It is mostly a summary of notes I took while building my own lab.
-Disclaimer Do not follow this guide blindly!
-Be very careful during the setup of your forensic lab, especially if you intend to manipulate and/or detonate malware. I am in no way responsible for any harm or damage you may cause and you should always make sure you are operating in a safe environment.</description>
     </item>
     
   </channel>

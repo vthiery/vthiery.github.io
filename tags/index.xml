@@ -17,11 +17,38 @@
     </item>
     
     <item>
+      <title>books</title>
+      <link>https://vthiery.github.io/tags/books/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>courses</title>
+      <link>https://vthiery.github.io/tags/courses/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/courses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>cutter</title>
       <link>https://vthiery.github.io/tags/cutter/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://vthiery.github.io/tags/cutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>learning</title>
+      <link>https://vthiery.github.io/tags/learning/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/learning/</guid>
       <description></description>
     </item>
     
@@ -49,6 +76,33 @@
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://vthiery.github.io/tags/x86-64/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>forensics</title>
+      <link>https://vthiery.github.io/tags/forensics/</link>
+      <pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/forensics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lab</title>
+      <link>https://vthiery.github.io/tags/lab/</link>
+      <pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/lab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>malware</title>
+      <link>https://vthiery.github.io/tags/malware/</link>
+      <pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/tags/malware/</guid>
       <description></description>
     </item>
     
