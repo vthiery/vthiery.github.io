@@ -31,10 +31,14 @@ enableEmoji = true
     url  = "mailto:vjmthiery@gmail.com"
 
 [[menu.main]]
-    weight = 1
+    weight = 100
+    name = "Posts"
+    url = "/posts/"
+[[menu.main]]
+    weight = 200
     name = "Notes"
     url = "/notes/"
 [[menu.main]]
-    weight = 2
+    weight = 300
     name = "CV"
     url = "/cv/"
