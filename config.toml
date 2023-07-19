@@ -42,3 +42,6 @@ enableEmoji = true
     weight = 300
     name = "CV"
     url = "/cv/"
+
+[permalinks]
+    posts = '/posts/:year/:month/:slug/'

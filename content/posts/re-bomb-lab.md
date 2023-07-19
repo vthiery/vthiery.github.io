@@ -8,6 +8,8 @@ tags:
   - x86-64
   - cutter
   - write-up
+aliases:
+  - /posts/re-bomb-lab/
 ---
 
 ## Context
@@ -23,6 +25,16 @@ Although the course suggests to use [gdb](https://sourceware.org/gdb/current/onl
 I used Cutter Version 2.2.1 on Debian 11 and stuck to Intel syntax. Also, even though I have been using Cutter's "Graph" view a lot, only linear disassembly code snippets will be used to illustrate my analysis.
 
 ## Analysis 
+
+- [strings](#strings)
+- [main](#main)
+- [Phase 1](#phase-1)
+- [Phase 2](#phase-2)
+- [Phase 3](#phase-3)
+- [Phase 4](#phase-4)
+- [Phase 5](#phase-5)
+- [Phase 6](#phase-6)
+- [Secret stage](#secret-stage)
 
 ### strings
 
@@ -893,7 +905,7 @@ Therefore, the first index should be `5` and the sum is:
 
 Phase 5 expects the answer: `5 115`.
 
-## Phase 6
+### Phase 6
 
 ```asm
 phase_6 ();

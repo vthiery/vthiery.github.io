@@ -1,11 +1,14 @@
 ---
-layout: note
-title: Forensic Lab setup 
+layout: post
+title: Forensic Lab setup with REMnux + Sift + FlareVM
 date: 2023-03-27
 tags:
+  - tutorial
   - forensics
   - malware
   - lab
+aliases:
+  - /notes/forensic-lab/
 ---
 
 This tutorial will guide you through the setup of a Forensic lab using:
