@@ -26,7 +26,7 @@
     <loc>https://vthiery.github.io/posts/</loc>
     <lastmod>2023-07-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://vthiery.github.io/posts/re-bomb-lab/</loc>
+    <loc>https://vthiery.github.io/posts/2023/07/reverse-engineering-the-bomb-lab-with-cutter/</loc>
     <lastmod>2023-07-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://vthiery.github.io/tags/reverse-engineering/</loc>
@@ -44,7 +44,7 @@
     <loc>https://vthiery.github.io/tags/x86-64/</loc>
     <lastmod>2023-07-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://vthiery.github.io/notes/forensic-lab/</loc>
+    <loc>https://vthiery.github.io/posts/2023/03/forensic-lab-setup-with-remnux--sift--flarevm/</loc>
     <lastmod>2023-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://vthiery.github.io/tags/forensics/</loc>
@@ -54,6 +54,9 @@
     <lastmod>2023-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://vthiery.github.io/tags/malware/</loc>
+    <lastmod>2023-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://vthiery.github.io/tags/tutorial/</loc>
     <lastmod>2023-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://vthiery.github.io/categories/</loc>

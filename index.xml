@@ -14,26 +14,26 @@
       
       <guid>https://vthiery.github.io/notes/learning-resources/</guid>
       <description>A list of resources that I use to teach myself cybersecurity and recommend.
-Malware Analysis / Reverse Engineering Online courses  Zero2Automated - Advanced Malware Analysis - In progress OpenSecurityTraining2 - Architecture 1001: x86-64 Assembly - July 2023 Sektor7 - RED TEAM Operator: Malware Development Intermediate - May 2023 Sektor7 - RED TEAM Operator: Malware Development Essentials - April 2023 TCM Security - Practical Malware Analysis &amp;amp; Triage - February 2023  Books  Practical Malware Analysis by Michael Sikorski and Andrew Honig  General Online courses  Udemy - Chris Greer&amp;rsquo;s Wireshark Hands-On Course - May 2023 TCM Security - Python 201 for Hackers - May 2023 TCM Security - OSINT Fundamentals - March 2023 TCM Security - Practical Windows Forensics - March 2023 HTB Academy - Bug Bounty Hunter role path - January 2023  Books  Practical Threat Intelligence and Data-Driven Threat Hunting by Valentina Costa-Gazcón Huntpedia Intelligence-Driven Incident Response by Rebekah Brown, Scott J.</description>
+Malware Analysis / Reverse Engineering Online courses  Zero2Automated - Advanced Malware Analysis - In progress OpenSecurityTraining2  Reverse Engineering 3201: Symbolic Analysis - July 2023 Reverse Engineering 3011: Reversing C++ Binaries - July 2023 Architecture 1001: x86-64 Assembly - July 2023   Sektor7  RED TEAM Operator: Malware Development Intermediate - May 2023 RED TEAM Operator: Malware Development Essentials - April 2023   TCM Security - Practical Malware Analysis &amp;amp; Triage - February 2023  Books  Practical Malware Analysis by Michael Sikorski and Andrew Honig  General Online courses  Udemy - Chris Greer&amp;rsquo;s Wireshark Hands-On Course - May 2023 TCM Security  Python 201 for Hackers - May 2023 OSINT Fundamentals - March 2023 Practical Windows Forensics - March 2023   HTB Academy - Bug Bounty Hunter role path - January 2023  Books  Practical Threat Intelligence and Data-Driven Threat Hunting by Valentina Costa-Gazcón Huntpedia Intelligence-Driven Incident Response by Rebekah Brown, Scott J.</description>
     </item>
     
     <item>
       <title>Reverse Engineering the &#34;Bomb Lab&#34; with Cutter</title>
-      <link>https://vthiery.github.io/posts/re-bomb-lab/</link>
+      <link>https://vthiery.github.io/posts/2023/07/reverse-engineering-the-bomb-lab-with-cutter/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://vthiery.github.io/posts/re-bomb-lab/</guid>
+      <guid>https://vthiery.github.io/posts/2023/07/reverse-engineering-the-bomb-lab-with-cutter/</guid>
       <description>Context I recently took the excellent &amp;ldquo;Architecture 1001: x86-64 Assembly&amp;rdquo; course offered by Xeno Kovah on OpenSecurityTraining2 to consolidate my knowledge of x86-64 assembly. The final assignment consists in solving the &amp;ldquo;Bomb Lab&amp;rdquo;.
 Although the course suggests to use gdb or WinDbg, I decided to do it differently and use Cutter with the following constraints:
  Not using debug symbols - this is something Xeno actually recommends if one has some reverse-engineering experience, or want extra challenge Perform a pure static analysis - using gdb/gef would be much smarter here, but I really wanted to practice static analysis Not using rz-ghidra or any decompiler since that would defeat the whole point of the exercise  I used Cutter Version 2.</description>
     </item>
     
     <item>
-      <title>Forensic Lab setup</title>
-      <link>https://vthiery.github.io/notes/forensic-lab/</link>
+      <title>Forensic Lab setup with REMnux &#43; Sift &#43; FlareVM</title>
+      <link>https://vthiery.github.io/posts/2023/03/forensic-lab-setup-with-remnux--sift--flarevm/</link>
       <pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://vthiery.github.io/notes/forensic-lab/</guid>
+      <guid>https://vthiery.github.io/posts/2023/03/forensic-lab-setup-with-remnux--sift--flarevm/</guid>
       <description>This tutorial will guide you through the setup of a Forensic lab using:
  VirtualBox 7 REMnux + Sift on Ubuntu 20.04 FlareVM on Windows 10  It is mostly a summary of notes I took while building my own lab.
 Disclaimer Do not follow this guide blindly!

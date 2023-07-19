@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>lab on Vincent Thiery</title>
-    <link>https://vthiery.github.io/tags/lab/</link>
-    <description>Recent content in lab on Vincent Thiery</description>
+    <title>tutorial on Vincent Thiery</title>
+    <link>https://vthiery.github.io/tags/tutorial/</link>
+    <description>Recent content in tutorial on Vincent Thiery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/tags/lab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Forensic Lab setup with REMnux &#43; Sift &#43; FlareVM</title>
       <link>https://vthiery.github.io/posts/2023/03/forensic-lab-setup-with-remnux--sift--flarevm/</link>
