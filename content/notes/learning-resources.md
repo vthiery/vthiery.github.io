@@ -15,9 +15,13 @@ A list of resources that I use to teach myself cybersecurity and recommend.
 ### Online courses
 
 - Zero2Automated - [Advanced Malware Analysis](https://www.0ffset.net/training/zero2auto/) - In progress
-- OpenSecurityTraining2 - [Architecture 1001: x86-64 Assembly](https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch1001_x86-64_Asm+2021_v1/course/) - July 2023
-- Sektor7 - [RED TEAM Operator: Malware Development Intermediate](https://institute.sektor7.net/rto-maldev-intermediate) - May 2023
-- Sektor7 - [RED TEAM Operator: Malware Development Essentials](https://institute.sektor7.net/red-team-operator-malware-development-essentials) - April 2023
+- OpenSecurityTraining2
+  - [Reverse Engineering 3201: Symbolic Analysis](https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+RE3201_symexec+2021_V1/course/) - July 2023
+  - [Reverse Engineering 3011: Reversing C++ Binaries](https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+RE3011_re_cpp+2022_v1/course/) - July 2023 
+  - [Architecture 1001: x86-64 Assembly](https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch1001_x86-64_Asm+2021_v1/course/) - July 2023
+- Sektor7
+  - [RED TEAM Operator: Malware Development Intermediate](https://institute.sektor7.net/rto-maldev-intermediate) - May 2023
+  - [RED TEAM Operator: Malware Development Essentials](https://institute.sektor7.net/red-team-operator-malware-development-essentials) - April 2023
 - TCM Security - [Practical Malware Analysis & Triage](https://academy.tcm-sec.com/p/practical-malware-analysis-triage) - February 2023
 
 ### Books
@@ -29,9 +33,10 @@ A list of resources that I use to teach myself cybersecurity and recommend.
 ### Online courses
 
 - Udemy - [Chris Greer's Wireshark Hands-On Course](https://www.udemy.com/course/wireshark-ultimate-hands-on-course/) - May 2023
-- TCM Security - [Python 201 for Hackers](https://academy.tcm-sec.com/p/python-201-for-hackers) - May 2023
-- TCM Security - [OSINT Fundamentals](https://academy.tcm-sec.com/p/osint-fundamentals) - March 2023
-- TCM Security - [Practical Windows Forensics](https://academy.tcm-sec.com/p/practical-windows-forensics) - March 2023
+- TCM Security
+  - [Python 201 for Hackers](https://academy.tcm-sec.com/p/python-201-for-hackers) - May 2023
+  - [OSINT Fundamentals](https://academy.tcm-sec.com/p/osint-fundamentals) - March 2023
+  - [Practical Windows Forensics](https://academy.tcm-sec.com/p/practical-windows-forensics) - March 2023
 - HTB Academy - [Bug Bounty Hunter role path](https://academy.hackthebox.com/path/preview/bug-bounty-hunter) - January 2023
 
 ### Books 
