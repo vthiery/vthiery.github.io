@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Context I recently completed Reverse Engineering 3201: Symbolic Analysis from OpenSecurityTraining2 and, like &amp;ldquo;Architecture 1001: x86-64 Assembly&amp;rdquo;, the final assignment consists in solving the &amp;ldquo;Bomb Lab&amp;rdquo;, but using angr this time.
+Since I already reversed the binary in my last post, this post will be much lighter and jump straight into Python code.
+The version of angr used here is 9.2.59.
+The resolution script is available on my Gist.
+Resolution  Setup Phase 1 Phase 2 Phase 3 Phase 4 Phase 5 Phase 6 Secret phase  Setup First, let&amp;rsquo;s setup the angr project and define bomb_addr that will be used as an avoid condition when calling explore()." />
+<meta name="keywords" content=", symbolic-analysis, angr, reverse-engineering, assembly, x86-64, write-up" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://vthiery.github.io/posts/2023/07/solving-the-bomb-lab-with-angr/" />
+
+
+    <title>
+        
+            Solving the &#34;Bomb Lab&#34; with Angr :: Vincent Thiery 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Solving the &#34;Bomb Lab&#34; with Angr">
+<meta itemprop="description" content="Context I recently completed Reverse Engineering 3201: Symbolic Analysis from OpenSecurityTraining2 and, like &ldquo;Architecture 1001: x86-64 Assembly&rdquo;, the final assignment consists in solving the &ldquo;Bomb Lab&rdquo;, but using angr this time.
+Since I already reversed the binary in my last post, this post will be much lighter and jump straight into Python code.
+The version of angr used here is 9.2.59.
+The resolution script is available on my Gist.
+Resolution  Setup Phase 1 Phase 2 Phase 3 Phase 4 Phase 5 Phase 6 Secret phase  Setup First, let&rsquo;s setup the angr project and define bomb_addr that will be used as an avoid condition when calling explore()."><meta itemprop="datePublished" content="2023-07-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-07-20T00:00:00+00:00" />
+<meta itemprop="wordCount" content="871">
+<meta itemprop="keywords" content="symbolic-analysis,angr,reverse-engineering,assembly,x86-64,write-up," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Solving the &#34;Bomb Lab&#34; with Angr"/>
+<meta name="twitter:description" content="Context I recently completed Reverse Engineering 3201: Symbolic Analysis from OpenSecurityTraining2 and, like &ldquo;Architecture 1001: x86-64 Assembly&rdquo;, the final assignment consists in solving the &ldquo;Bomb Lab&rdquo;, but using angr this time.
+Since I already reversed the binary in my last post, this post will be much lighter and jump straight into Python code.
+The version of angr used here is 9.2.59.
+The resolution script is available on my Gist.
+Resolution  Setup Phase 1 Phase 2 Phase 3 Phase 4 Phase 5 Phase 6 Secret phase  Setup First, let&rsquo;s setup the angr project and define bomb_addr that will be used as an avoid condition when calling explore()."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-07-20 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">/home/vthiery</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts/">Posts</a></li><li><a href="/notes/">Notes</a></li><li><a href="/cv/">CV</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        5 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://vthiery.github.io/posts/2023/07/solving-the-bomb-lab-with-angr/">Solving the &ldquo;Bomb Lab&rdquo; with Angr</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h2 id="context">Context</h2>
+<p>I recently completed <a href="https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+RE3201_symexec+2021_V1/course/">Reverse Engineering 3201: Symbolic Analysis</a> from <a href="https://p.ost2.fyi/courses/">OpenSecurityTraining2</a> and, like <a href="https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch1001_x86-64_Asm+2021_v1/course/">&ldquo;Architecture 1001: x86-64 Assembly&rdquo;</a>, the final assignment consists in solving the <a href="https://gitlab.com/opensecuritytraining/arch1001_x86-64_asm_code_for_class">&ldquo;Bomb Lab&rdquo;</a>, but using <a href="https://angr.io/">angr</a> this time.</p>
+<p>Since I already reversed the binary in my <a href="https://vthiery.github.io/posts/2023/07/reverse-engineering-the-bomb-lab-with-cutter/">last post</a>, this post will be much lighter and jump straight into Python code.</p>
+<p>The version of <code>angr</code> used here is <a href="https://github.com/angr/angr/releases/tag/v9.2.59">9.2.59</a>.</p>
+<p>The resolution script is available on my <a href="https://gist.github.com/vthiery/34db0ab49ca9c3b9b65ba9b80fd56a00">Gist</a>.</p>
+<h2 id="resolution">Resolution</h2>
+<ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#phase-1">Phase 1</a></li>
+<li><a href="#phase-2">Phase 2</a></li>
+<li><a href="#phase-3">Phase 3</a></li>
+<li><a href="#phase-4">Phase 4</a></li>
+<li><a href="#phase-5">Phase 5</a></li>
+<li><a href="#phase-6">Phase 6</a></li>
+<li><a href="#secret-phase">Secret phase</a></li>
+</ul>
+<h3 id="setup">Setup</h3>
+<p>First, let&rsquo;s setup the angr project and define <code>bomb_addr</code> that will be used as an <code>avoid</code> condition when calling <code>explore()</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> angr
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> claripy
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logging<span style="color:#f92672">.</span>getLogger(<span style="color:#e6db74">&#34;angr&#34;</span>)<span style="color:#f92672">.</span>setLevel(<span style="color:#e6db74">&#34;ERROR&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Common setup</span>
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> angr<span style="color:#f92672">.</span>Project(<span style="color:#e6db74">&#34;bomb&#34;</span>, load_options<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;auto_load_libs&#34;</span>: <span style="color:#66d9ef">False</span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>base_addr <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>loader<span style="color:#f92672">.</span>min_addr
+</span></span><span style="display:flex;"><span>functions <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>analyses<span style="color:#f92672">.</span>CFG()<span style="color:#f92672">.</span>kb<span style="color:#f92672">.</span>functions
+</span></span><span style="display:flex;"><span>bomb_addr <span style="color:#f92672">=</span> functions<span style="color:#f92672">.</span>function(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;explode_bomb&#34;</span>)<span style="color:#f92672">.</span>addr
+</span></span></code></pre></div><h3 id="phase-1">Phase 1</h3>
+<p>This phase is pretty simple and we simply need to allow for enough space when defining the bitvector symbol:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_phase_1</span>():
+</span></span><span style="display:flex;"><span>    phase_addr <span style="color:#f92672">=</span> functions<span style="color:#f92672">.</span>function(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;phase_1&#34;</span>)<span style="color:#f92672">.</span>addr
+</span></span><span style="display:flex;"><span>    state <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>blank_state(addr<span style="color:#f92672">=</span>phase_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    flag <span style="color:#f92672">=</span> claripy<span style="color:#f92672">.</span>BVS(<span style="color:#e6db74">&#34;flag&#34;</span>, <span style="color:#ae81ff">8</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">50</span>)  <span style="color:#75715e"># should be enough</span>
+</span></span><span style="display:flex;"><span>    state<span style="color:#f92672">.</span>memory<span style="color:#f92672">.</span>store(state<span style="color:#f92672">.</span>regs<span style="color:#f92672">.</span>rdi, flag)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sim <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>simgr(state)
+</span></span><span style="display:flex;"><span>    target_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x000015C3</span>  <span style="color:#75715e"># target ret</span>
+</span></span><span style="display:flex;"><span>    sim<span style="color:#f92672">.</span>explore(find<span style="color:#f92672">=</span>target_addr, avoid<span style="color:#f92672">=</span>bomb_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> sim<span style="color:#f92672">.</span>found:
+</span></span><span style="display:flex;"><span>        f <span style="color:#f92672">=</span> sim<span style="color:#f92672">.</span>found[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> str(
+</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>solver<span style="color:#f92672">.</span>eval(flag, cast_to<span style="color:#f92672">=</span>bytes)[:<span style="color:#ae81ff">32</span>], <span style="color:#e6db74">&#34;UTF-8&#34;</span>
+</span></span><span style="display:flex;"><span>        )  <span style="color:#75715e"># a posteriori pretty print</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Flag 1: &#34;</span><span style="color:#e6db74">{</span>s<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Failed to solve phase 1&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">SystemExit</span>(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>calling <code>solve_phase_1</code> eventually gives us the flag (you may have to wait for 30 to 40 seconds):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>❯ python3 bomb.py 
+</span></span><span style="display:flex;"><span>Flag 1: <span style="color:#e6db74">&#34;I am just a renegade hockey mom.&#34;</span>
+</span></span></code></pre></div><h3 id="phase-2">Phase 2</h3>
+<p>In phase 2, there is a call to <code>read_six_numbers</code> that we need to hook:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">hook_read_six_numbers</span>(angr<span style="color:#f92672">.</span>SimProcedure):
+</span></span><span style="display:flex;"><span>    numbers <span style="color:#f92672">=</span> [<span style="color:#66d9ef">None</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self, str_addr, int_addr):
+</span></span><span style="display:flex;"><span>        numbers <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6</span>):
+</span></span><span style="display:flex;"><span>            bvs <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>state<span style="color:#f92672">.</span>solver<span style="color:#f92672">.</span>BVS(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;flag_</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">32</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>numbers[i] <span style="color:#f92672">=</span> bvs
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>state<span style="color:#f92672">.</span>mem[int_addr]<span style="color:#f92672">.</span>int<span style="color:#f92672">.</span>array(<span style="color:#ae81ff">6</span>)[i] <span style="color:#f92672">=</span> bvs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hook `read_six_numbers` globally</span>
+</span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>hook(functions<span style="color:#f92672">.</span>function(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;read_six_numbers&#34;</span>)<span style="color:#f92672">.</span>addr, hook_read_six_numbers())
+</span></span></code></pre></div><p>The rest of the code is straightforward and will quickly find the flag:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_phase_2</span>():
+</span></span><span style="display:flex;"><span>    phase_addr <span style="color:#f92672">=</span> functions<span style="color:#f92672">.</span>function(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;phase_2&#34;</span>)<span style="color:#f92672">.</span>addr
+</span></span><span style="display:flex;"><span>    state <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>blank_state(addr<span style="color:#f92672">=</span>phase_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sim <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>simgr(state)
+</span></span><span style="display:flex;"><span>    target_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x00001633</span>  <span style="color:#75715e"># target ret</span>
+</span></span><span style="display:flex;"><span>    sim<span style="color:#f92672">.</span>explore(find<span style="color:#f92672">=</span>target_addr, avoid<span style="color:#f92672">=</span>bomb_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> sim<span style="color:#f92672">.</span>found:
+</span></span><span style="display:flex;"><span>        f <span style="color:#f92672">=</span> sim<span style="color:#f92672">.</span>found[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        print(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Flag 2: &#34;</span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join([str(f<span style="color:#f92672">.</span>solver<span style="color:#f92672">.</span>eval(i)) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> hook_read_six_numbers<span style="color:#f92672">.</span>numbers])<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Failed to solve phase 2&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">SystemExit</span>(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>❯ python3 bomb.py 
+</span></span><span style="display:flex;"><span>Flag 2: <span style="color:#e6db74">&#34;1 2 4 8 16 32&#34;</span>
+</span></span></code></pre></div><h3 id="phase-3">Phase 3</h3>
+<p>In phase 3, we have a call to <code>sscanf</code> that we must skip. The symbolic variable must be pushed onto the stack and we must therefore stop before the function epilogue where the stack is restored.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_phase_3</span>():
+</span></span><span style="display:flex;"><span>    phase_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x00001665</span>  <span style="color:#75715e"># after sscanf</span>
+</span></span><span style="display:flex;"><span>    state <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>blank_state(addr<span style="color:#f92672">=</span>phase_addr)
+</span></span><span style="display:flex;"><span>    state<span style="color:#f92672">.</span>stack_push(claripy<span style="color:#f92672">.</span>BVS(<span style="color:#e6db74">&#34;flag&#34;</span>, <span style="color:#ae81ff">64</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sim <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>simgr(state)
+</span></span><span style="display:flex;"><span>    target_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x000016CC</span>  <span style="color:#75715e"># before stack restoration</span>
+</span></span><span style="display:flex;"><span>    sim<span style="color:#f92672">.</span>explore(find<span style="color:#f92672">=</span>target_addr, avoid<span style="color:#f92672">=</span>bomb_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> sim<span style="color:#f92672">.</span>found:
+</span></span><span style="display:flex;"><span>        f <span style="color:#f92672">=</span> sim<span style="color:#f92672">.</span>found[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        flag <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>solver<span style="color:#f92672">.</span>eval(f<span style="color:#f92672">.</span>stack_pop())
+</span></span><span style="display:flex;"><span>        mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xFFFFFFFF</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Flag 3: &#34;</span><span style="color:#e6db74">{</span>str(flag <span style="color:#f92672">&amp;</span> mask)<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>str(flag <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">32</span> <span style="color:#f92672">&amp;</span> mask)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Failed to solve phase 3&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">SystemExit</span>(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>❯ python3 bomb.py
+</span></span><span style="display:flex;"><span>Flag 3: <span style="color:#e6db74">&#34;0 602&#34;</span>
+</span></span></code></pre></div><h3 id="phase-4">Phase 4</h3>
+<p>Phase 4 can be solved just like phase 3:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_phase_4</span>():
+</span></span><span style="display:flex;"><span>    phase_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x00001777</span>  <span style="color:#75715e"># after sscanf</span>
+</span></span><span style="display:flex;"><span>    state <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>blank_state(addr<span style="color:#f92672">=</span>phase_addr)
+</span></span><span style="display:flex;"><span>    state<span style="color:#f92672">.</span>stack_push(claripy<span style="color:#f92672">.</span>BVS(<span style="color:#e6db74">&#34;flag&#34;</span>, <span style="color:#ae81ff">64</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sim <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>simgr(state)
+</span></span><span style="display:flex;"><span>    target_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x000017BA</span>  <span style="color:#75715e"># before stack restoration</span>
+</span></span><span style="display:flex;"><span>    sim<span style="color:#f92672">.</span>explore(find<span style="color:#f92672">=</span>target_addr, avoid<span style="color:#f92672">=</span>bomb_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> sim<span style="color:#f92672">.</span>found:
+</span></span><span style="display:flex;"><span>        f <span style="color:#f92672">=</span> sim<span style="color:#f92672">.</span>found[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        flag <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>solver<span style="color:#f92672">.</span>eval(f<span style="color:#f92672">.</span>stack_pop())
+</span></span><span style="display:flex;"><span>        mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xFFFFFFFF</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Flag 4: &#34;</span><span style="color:#e6db74">{</span>str(flag <span style="color:#f92672">&amp;</span> mask)<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>str(flag <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">32</span> <span style="color:#f92672">&amp;</span> mask)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Failed to solve phase 4&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">SystemExit</span>(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>❯ python3 bomb.py
+</span></span><span style="display:flex;"><span>Flag 4: <span style="color:#e6db74">&#34;3 10&#34;</span>
+</span></span></code></pre></div><h3 id="phase-5">Phase 5</h3>
+<p>Solving phase 5 is similar to phase 3 and 4, except for the fact that the stack is modified with <code>mov dword [rsp], 0xf</code>. As a result, the value popped from the stack will be <code>15 115</code> instead of the expected <code>5 115</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_phase_5</span>():
+</span></span><span style="display:flex;"><span>    phase_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x000017F0</span>  <span style="color:#75715e"># after sscanf</span>
+</span></span><span style="display:flex;"><span>    state <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>blank_state(addr<span style="color:#f92672">=</span>phase_addr)
+</span></span><span style="display:flex;"><span>    state<span style="color:#f92672">.</span>stack_push(claripy<span style="color:#f92672">.</span>BVS(<span style="color:#e6db74">&#34;flag&#34;</span>, <span style="color:#ae81ff">64</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sim <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>simgr(state)
+</span></span><span style="display:flex;"><span>    target_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x00001848</span>  <span style="color:#75715e"># before stack restoration</span>
+</span></span><span style="display:flex;"><span>    sim<span style="color:#f92672">.</span>explore(find<span style="color:#f92672">=</span>target_addr, avoid<span style="color:#f92672">=</span>bomb_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> sim<span style="color:#f92672">.</span>found:
+</span></span><span style="display:flex;"><span>        f <span style="color:#f92672">=</span> sim<span style="color:#f92672">.</span>found[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        flag <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>solver<span style="color:#f92672">.</span>eval(
+</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>stack_pop()
+</span></span><span style="display:flex;"><span>        )  <span style="color:#75715e"># Result is 15 115 and not 5 115 because of mov dword [rsp], 0xf</span>
+</span></span><span style="display:flex;"><span>        mask <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xFFFFFFFF</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Flag 5: &#34;5 </span><span style="color:#e6db74">{</span>str(flag <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">32</span> <span style="color:#f92672">&amp;</span> mask)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Failed to solve phase 5&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">SystemExit</span>(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>❯ python3 bomb.py
+</span></span><span style="display:flex;"><span>Flag 5: <span style="color:#e6db74">&#34;5 115&#34;</span>
+</span></span></code></pre></div><h3 id="phase-6">Phase 6</h3>
+<p>Phase 6 can be solved just like phase 2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_phase_6</span>():
+</span></span><span style="display:flex;"><span>    phase_addr <span style="color:#f92672">=</span> functions<span style="color:#f92672">.</span>function(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;phase_6&#34;</span>)<span style="color:#f92672">.</span>addr
+</span></span><span style="display:flex;"><span>    state <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>blank_state(addr<span style="color:#f92672">=</span>phase_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sim <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>simgr(state)
+</span></span><span style="display:flex;"><span>    target_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x0000197D</span>  <span style="color:#75715e"># target ret</span>
+</span></span><span style="display:flex;"><span>    sim<span style="color:#f92672">.</span>explore(find<span style="color:#f92672">=</span>target_addr, avoid<span style="color:#f92672">=</span>bomb_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> sim<span style="color:#f92672">.</span>found:
+</span></span><span style="display:flex;"><span>        f <span style="color:#f92672">=</span> sim<span style="color:#f92672">.</span>found[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        print(
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Flag 6: &#34;</span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join([str(f<span style="color:#f92672">.</span>solver<span style="color:#f92672">.</span>eval(i)) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> hook_read_six_numbers<span style="color:#f92672">.</span>numbers])<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Failed to solve phase 6&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">SystemExit</span>(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>Note: thos one will take quite some time to return the flag.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>❯ python3 bomb.py
+</span></span><span style="display:flex;"><span>Flag 6: <span style="color:#e6db74">&#34;5 4 3 1 6 2&#34;</span>
+</span></span></code></pre></div><h3 id="secret-phase">Secret phase</h3>
+<p>To solve the secret phase, we have a call to <code>read_line</code> and <code>strtol</code> that we want to skip. Then, setting up the <code>rax</code> register to our symbol value:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve_phase_S</span>():
+</span></span><span style="display:flex;"><span>    phase_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x000019e0</span> <span style="color:#75715e"># after strtol</span>
+</span></span><span style="display:flex;"><span>    state <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>blank_state(addr<span style="color:#f92672">=</span>phase_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    flag <span style="color:#f92672">=</span> claripy<span style="color:#f92672">.</span>BVS(<span style="color:#e6db74">&#34;flag&#34;</span>, <span style="color:#ae81ff">64</span>)
+</span></span><span style="display:flex;"><span>    state<span style="color:#f92672">.</span>regs<span style="color:#f92672">.</span>rax <span style="color:#f92672">=</span> flag
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sim <span style="color:#f92672">=</span> p<span style="color:#f92672">.</span>factory<span style="color:#f92672">.</span>simgr(state)
+</span></span><span style="display:flex;"><span>    target_addr <span style="color:#f92672">=</span> base_addr <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x00001a12</span> <span style="color:#75715e"># target ret</span>
+</span></span><span style="display:flex;"><span>    sim<span style="color:#f92672">.</span>explore(find<span style="color:#f92672">=</span>target_addr, avoid<span style="color:#f92672">=</span>bomb_addr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> sim<span style="color:#f92672">.</span>found:
+</span></span><span style="display:flex;"><span>        f <span style="color:#f92672">=</span> sim<span style="color:#f92672">.</span>found[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Flag S: &#34;</span><span style="color:#e6db74">{</span>f<span style="color:#f92672">.</span>solver<span style="color:#f92672">.</span>eval(flag, cast_to<span style="color:#f92672">=</span>int)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;Failed to solve secret phase&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">SystemExit</span>(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>❯ python3 bomb.py
+</span></span><span style="display:flex;"><span>Flag S: <span style="color:#e6db74">&#34;47&#34;</span>
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+<p>Solving this lab again was a nice way to play a little bit with <code>angr</code> and practice what I learnt in the course.</p>
+<p>The resolution was a tad repetitive but I imagine there are more sophisticated and smarter ways to solve these challenges.</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://vthiery.github.io/tags/symbolic-analysis/">symbolic-analysis</a></span>
+        <span class="tag"><a href="https://vthiery.github.io/tags/angr/">angr</a></span>
+        <span class="tag"><a href="https://vthiery.github.io/tags/reverse-engineering/">reverse-engineering</a></span>
+        <span class="tag"><a href="https://vthiery.github.io/tags/assembly/">assembly</a></span>
+        <span class="tag"><a href="https://vthiery.github.io/tags/x86-64/">x86-64</a></span>
+        <span class="tag"><a href="https://vthiery.github.io/tags/write-up/">write-up</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        871 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2023-07-20 00:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="https://vthiery.github.io/posts/2023/07/reverse-engineering-the-bomb-lab-with-cutter/">
+                    <span class="button__text">Reverse Engineering the &#34;Bomb Lab&#34; with Cutter</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.2d3d449fc0ff117f00ac91342a8f76cd5b710411d7a0254dbe75da3234d2f685d6a0c44cff60c414e90b6a149da8e4032c713c25e4e6838e2e3918dc0ad2e81c.js" integrity="sha512-LT1En8D/EX8ArJE0Ko92zVtxBBHXoCVNvnXaMjTS9oXWoMRM/2DEFOkLahSdqOQDLHE8JeTmg44uORjcCtLoHA=="></script>
+
+
+
+    </body>
+</html>

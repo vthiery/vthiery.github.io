@@ -6,7 +6,20 @@
     <description>Recent content in assembly on Vincent Thiery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solving the &#34;Bomb Lab&#34; with Angr</title>
+      <link>https://vthiery.github.io/posts/2023/07/solving-the-bomb-lab-with-angr/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/posts/2023/07/solving-the-bomb-lab-with-angr/</guid>
+      <description>Context I recently completed Reverse Engineering 3201: Symbolic Analysis from OpenSecurityTraining2 and, like &amp;ldquo;Architecture 1001: x86-64 Assembly&amp;rdquo;, the final assignment consists in solving the &amp;ldquo;Bomb Lab&amp;rdquo;, but using angr this time.
+Since I already reversed the binary in my last post, this post will be much lighter and jump straight into Python code.
+The version of angr used here is 9.2.59.
+The resolution script is available on my Gist.
+Resolution  Setup Phase 1 Phase 2 Phase 3 Phase 4 Phase 5 Phase 6 Secret phase  Setup First, let&amp;rsquo;s setup the angr project and define bomb_addr that will be used as an avoid condition when calling explore().</description>
+    </item>
+    
     <item>
       <title>Reverse Engineering the &#34;Bomb Lab&#34; with Cutter</title>
       <link>https://vthiery.github.io/posts/2023/07/reverse-engineering-the-bomb-lab-with-cutter/</link>
