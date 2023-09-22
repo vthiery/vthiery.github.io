@@ -6,7 +6,17 @@
     <description>Recent content on Vincent Thiery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vthiery.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cybersecurity Learning Resources</title>
+      <link>https://vthiery.github.io/notes/learning-resources/</link>
+      <pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vthiery.github.io/notes/learning-resources/</guid>
+      <description>A list of resources that I use to teach myself cybersecurity and recommend.
+Malware Analysis / Reverse Engineering Online courses  Zero2Automated - Advanced Malware Analysis - In progress OpenSecurityTraining2  Reverse Engineering 3201: Symbolic Analysis - July 2023 Reverse Engineering 3011: Reversing C++ Binaries - July 2023 Architecture 1001: x86-64 Assembly - July 2023   Sektor7  RED TEAM Operator: Malware Development Intermediate - May 2023 RED TEAM Operator: Malware Development Essentials - April 2023   TCM Security - Practical Malware Analysis &amp;amp; Triage - February 2023  Books  Practical Reverse Engineering by Bruce Dang et al.</description>
+    </item>
+    
     <item>
       <title>Solving the &#34;Bomb Lab&#34; with Angr</title>
       <link>https://vthiery.github.io/posts/2023/07/solving-the-bomb-lab-with-angr/</link>
@@ -18,16 +28,6 @@ Since I already reversed the binary in my last post, this post will be much ligh
 The version of angr used here is 9.2.59.
 The resolution script is available on my Gist.
 Resolution  Setup Phase 1 Phase 2 Phase 3 Phase 4 Phase 5 Phase 6 Secret phase  Setup First, let&amp;rsquo;s setup the angr project and define bomb_addr that will be used as an avoid condition when calling explore().</description>
-    </item>
-    
-    <item>
-      <title>Cybersecurity Learning Resources</title>
-      <link>https://vthiery.github.io/notes/learning-resources/</link>
-      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://vthiery.github.io/notes/learning-resources/</guid>
-      <description>A list of resources that I use to teach myself cybersecurity and recommend.
-Malware Analysis / Reverse Engineering Online courses  Zero2Automated - Advanced Malware Analysis - In progress OpenSecurityTraining2  Reverse Engineering 3201: Symbolic Analysis - July 2023 Reverse Engineering 3011: Reversing C++ Binaries - July 2023 Architecture 1001: x86-64 Assembly - July 2023   Sektor7  RED TEAM Operator: Malware Development Intermediate - May 2023 RED TEAM Operator: Malware Development Essentials - April 2023   TCM Security - Practical Malware Analysis &amp;amp; Triage - February 2023  Books  Practical Malware Analysis by Michael Sikorski and Andrew Honig  General Online courses  Udemy - Chris Greer&amp;rsquo;s Wireshark Hands-On Course - May 2023 TCM Security  Python 201 for Hackers - May 2023 OSINT Fundamentals - March 2023 Practical Windows Forensics - March 2023   HTB Academy - Bug Bounty Hunter role path - January 2023  Books  Practical Threat Intelligence and Data-Driven Threat Hunting by Valentina Costa-Gazcón Huntpedia Intelligence-Driven Incident Response by Rebekah Brown, Scott J.</description>
     </item>
     
     <item>
@@ -59,7 +59,8 @@ Be very careful during the setup of your forensic lab, especially if you intend 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vthiery.github.io/cv/</guid>
-      <description>TL;DR  I am currently working as CISO for Edgelab / Evooq in Switzerland. Also worked as SRE (2y), Software Engineer (3y+), and Quant (2y+). Before that, I studied maths, physics, and quantitative finance. I&amp;rsquo;m curious, enjoy learning new things, and passionate about cybersecurity. I speak French and English. Feel free to contact me by email.  Experiences &amp;mdash; Chief Information Security Officer (CISO) @ Edgelab / Evooq Since Sep 2021</description>
+      <description>TL;DR  Currently working as Information Security Engineer at Camunda, remotely from Switzerland. Also worked as SRE (2y), Software Engineer (3y+), and Quant (2y+). Before that, I studied maths, physics, and quantitative finance. I&amp;rsquo;m curious, enjoy learning new things, and passionate about cybersecurity. I speak French and English. Feel free to contact me by email.  Experiences &amp;mdash; Information Security Engineer @ Camunda From Sep 2023
+The Information Security team leads everything related to InfoSec at Camunda in a transparent, secure and straightforward way.</description>
     </item>
     
   </channel>
