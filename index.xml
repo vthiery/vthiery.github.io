@@ -18,49 +18,13 @@ Malware Analysis / Reverse Engineering Online courses  Zero2Automated - Advanced
     </item>
     
     <item>
-      <title>Solving the &#34;Bomb Lab&#34; with Angr</title>
-      <link>https://vthiery.github.io/posts/2023/07/solving-the-bomb-lab-with-angr/</link>
-      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://vthiery.github.io/posts/2023/07/solving-the-bomb-lab-with-angr/</guid>
-      <description>Context I recently completed Reverse Engineering 3201: Symbolic Analysis from OpenSecurityTraining2 and, like &amp;ldquo;Architecture 1001: x86-64 Assembly&amp;rdquo;, the final assignment consists in solving the &amp;ldquo;Bomb Lab&amp;rdquo;, but using angr this time.
-Since I already reversed the binary in my last post, this post will be much lighter and jump straight into Python code.
-The version of angr used here is 9.2.59.
-The resolution script is available on my Gist.
-Resolution  Setup Phase 1 Phase 2 Phase 3 Phase 4 Phase 5 Phase 6 Secret phase  Setup First, let&amp;rsquo;s setup the angr project and define bomb_addr that will be used as an avoid condition when calling explore().</description>
-    </item>
-    
-    <item>
-      <title>Reverse Engineering the &#34;Bomb Lab&#34; with Cutter</title>
-      <link>https://vthiery.github.io/posts/2023/07/reverse-engineering-the-bomb-lab-with-cutter/</link>
-      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://vthiery.github.io/posts/2023/07/reverse-engineering-the-bomb-lab-with-cutter/</guid>
-      <description>Context I recently took the excellent &amp;ldquo;Architecture 1001: x86-64 Assembly&amp;rdquo; course offered by Xeno Kovah on OpenSecurityTraining2 to consolidate my knowledge of x86-64 assembly. The final assignment consists in solving the &amp;ldquo;Bomb Lab&amp;rdquo;.
-Although the course suggests to use gdb or WinDbg, I decided to do it differently and use Cutter with the following constraints:
- Not using debug symbols - this is something Xeno actually recommends if one has some reverse-engineering experience, or want extra challenge Perform a pure static analysis - using gdb/gef would be much smarter here, but I really wanted to practice static analysis Not using rz-ghidra or any decompiler since that would defeat the whole point of the exercise  I used Cutter Version 2.</description>
-    </item>
-    
-    <item>
-      <title>Forensic Lab setup with REMnux &#43; Sift &#43; FlareVM</title>
-      <link>https://vthiery.github.io/posts/2023/03/forensic-lab-setup-with-remnux--sift--flarevm/</link>
-      <pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://vthiery.github.io/posts/2023/03/forensic-lab-setup-with-remnux--sift--flarevm/</guid>
-      <description>This tutorial will guide you through the setup of a Forensic lab using:
- VirtualBox 7 REMnux + Sift on Ubuntu 20.04 FlareVM on Windows 10  It is mostly a summary of notes I took while building my own lab.
-Disclaimer Do not follow this guide blindly!
-Be very careful during the setup of your forensic lab, especially if you intend to manipulate and/or detonate malware. I am in no way responsible for any harm or damage you may cause and you should always make sure you are operating in a safe environment.</description>
-    </item>
-    
-    <item>
       <title>Vincent Thiery</title>
       <link>https://vthiery.github.io/cv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vthiery.github.io/cv/</guid>
-      <description>TL;DR  Currently working as Information Security Engineer at Camunda, remotely from Switzerland. Also worked as SRE (2y), Software Engineer (3y+), and Quant (2y+). Before that, I studied maths, physics, and quantitative finance. I&amp;rsquo;m curious, enjoy learning new things, and passionate about cybersecurity. I speak French and English. Feel free to contact me by email.  Experiences &amp;mdash; Information Security Engineer @ Camunda From Sep 2023
-The Information Security team leads everything related to InfoSec at Camunda in a transparent, secure and straightforward way.</description>
+      <description>TL;DR  Currently working as Information Security Engineer at Camunda, remotely from Switzerland. Also worked as SRE (2y), Software Engineer (3y+), and Quant (2y+). Before that, I studied maths, physics, and quantitative finance. I&amp;rsquo;m curious, enjoy learning new things, and passionate about cybersecurity. I speak French, English, and some Spanish. Feel free to contact me by email.  Professional Experience Information Security Engineer @ Camunda Sep 2023 → Now
+The Information Security team leads everything related to InfoSec at Camunda in a transparent, secure, and straightforward way.</description>
     </item>
     
   </channel>
