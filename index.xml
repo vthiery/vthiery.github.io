@@ -6,15 +6,5 @@
     <description>Recent content on Vincent Thiery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://vthiery.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Vincent Thiery</title>
-      <link>https://vthiery.github.io/cv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vthiery.github.io/cv/</guid>
-      <description>TL;DR  Currently working as Information Security Engineer at Camunda, remotely from Switzerland. Also worked as SRE (2y), Software Engineer (3y+), and Quant (2y+). Before that, I studied maths, physics, and quantitative finance. I&amp;rsquo;m curious, enjoy learning new things, and passionate about cybersecurity. I speak French, English, and some Spanish. Feel free to contact me by email.  Professional Experience Information Security Engineer @ Camunda Sep 2023 → Now
-The Information Security team leads everything related to InfoSec at Camunda in a transparent, secure, and straightforward way.</description>
-    </item>
-    
   </channel>
 </rss>
