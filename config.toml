@@ -1,0 +1,42 @@
+title        = "Vincent Thiery"
+baseURL      = "https://vthiery.github.io"
+languageCode = "en-us"
+theme        = "hello-friend-ng"
+
+enableEmoji = true
+
+[params]
+    author       = "Vincent Thiery"
+    homeSubtitle = "Information Security Engineer @ Camunda"
+    description  = "Vincent Thiery's personal site"
+
+[params.logo]
+    logoMark = ">"
+    logoText = "/home/vthiery"
+
+[[params.social]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/vthiery"
+[[params.social]]
+    name = "github"
+    url = "https://github.com/vthiery"
+[[params.social]]
+    name = "gitlab"
+    url = "https://gitlab.com/vthiery"
+[[params.social]]
+    name = "hackthebox"
+    url = "https://app.hackthebox.com/profile/1114041"
+[[params.social]]
+    name = "keybase"
+    url = "https://keybase.io/vthiery"
+[[params.social]]
+    name = "email"
+    url  = "mailto:vjmthiery@gmail.com"
+
+[[menu.main]]
+    weight = 200
+    name = "notes"
+    url = "https://publish.obsidian.md/vthiery-dg/README"
+
+[permalinks]
+    posts = '/posts/:year/:month/:slug/'
